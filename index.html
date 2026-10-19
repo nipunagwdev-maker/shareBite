@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth scroll-pt-17">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ShareBite | Food Rescue &amp; Surplus Sharing Platform</title>
+    <meta
+      name="description"
+      content="ShareBite connects people who have extra food with people who need it."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Brand colors, font and animation. Change them here only. -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-brand: #1f5c3a;
+        --color-brand-dark: #17452c;
+        --color-tomato: #e4472b;
+        --color-tomato-dark: #c93a20;
+        --color-mango: #f5b83d;
+        --color-ink: #1e2a24;
+        --color-muted: #55655c;
+        --color-tint: #f3f7f2;
+        --color-line: #e1e8e2;
+        --font-sans: "DM Sans", system-ui, sans-serif;
+        --animate-float: float 5s ease-in-out infinite;
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+      }
+      @layer base {
+        :focus-visible {
+          outline: 3px solid var(--color-mango);
+          outline-offset: 3px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-[17px] leading-relaxed text-ink">
+    <!-- HEADER -->
+    <header
+      id="header"
+      data-scrolled="false"
+      class="sticky top-0 z-50 h-17 border-b border-transparent bg-white/95 backdrop-blur-sm transition data-[scrolled=true]:border-line data-[scrolled=true]:shadow-md"
+    >
+      <div
+        class="mx-auto flex h-full w-[min(1100px,92%)] items-center justify-between"
+      >
+        <a href="#home" class="text-2xl font-bold tracking-tight text-brand"
+          >Share<span class="text-tomato">Bite</span></a
+        >
+
+        <button
+          id="menuBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+          class="group cursor-pointer p-2 md:hidden"
+        >
+          <span
+            class="my-1.25 block h-0.5 w-6 bg-brand transition group-aria-expanded:translate-y-1.75 group-aria-expanded:rotate-45"
+          ></span>
+          <span
+            class="my-1.25 block h-0.5 w-6 bg-brand transition group-aria-expanded:opacity-0"
+          ></span>
+          <span
+            class="my-1.25 block h-0.5 w-6 bg-brand transition group-aria-expanded:-translate-y-1.75 group-aria-expanded:-rotate-45"
+          ></span>
+        </button>
+
+        <nav
+          id="nav"
+          class="absolute inset-x-0 top-17 hidden border-b border-line bg-white px-[4%] py-2 md:static md:flex md:gap-1.5 md:border-0 md:bg-transparent md:p-0"
+        >
+          <a
+            href="#home"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Home</a
+          >
+          <a
+            href="pages/food.html"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Available Food</a
+          >
+          <a
+            href="#features"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Requests</a
+          >
+          <a
+            href="#about"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Tracking</a
+          >
+          <a
+            href="#contact"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Posts</a
+          >
+          <a
+            href="#contact"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Login</a
+          >
+          <a
+            href="#contact"
+            class="block rounded-lg px-2 py-3.5 font-medium text-muted transition-colors hover:bg-tint hover:text-brand md:rounded-full md:px-3.5 md:py-2"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="overflow-hidden pt-10 pb-15 md:pt-18 md:pb-22">
+        <div
+          class="mx-auto grid w-[min(1100px,92%)] items-center gap-12 md:grid-cols-[1.1fr_0.9fr]"
+        >
+          <div>
+            <h1
+              class="text-4xl leading-tight font-bold tracking-tight text-brand-dark sm:text-5xl lg:text-6xl"
+            >
+              Good food should be eaten, not thrown away.
+            </h1>
+            <p class="mt-5 max-w-[30em] text-lg text-muted">
+              ShareBite connects shops, homes and events that have extra food
+              with people and charities who need it. Fast, free and close to
+              you.
+            </p>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="#how"
+                class="inline-block rounded-full bg-tomato px-6.5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-tomato-dark"
+                >See how it works</a
+              >
+              <a
+                href="#team-members"
+                class="inline-block rounded-full border-2 border-brand px-6.5 py-3 font-bold text-brand transition hover:-translate-y-0.5 hover:bg-brand hover:text-white"
+                >Meet our team</a
+              >
+            </div>
+          </div>
+
+          <div class="relative flex justify-center p-5" aria-hidden="true">
+            <div
+              class="relative z-10 w-full max-w-85 animate-float rounded-[20px] border border-line bg-white p-6.5 shadow-2xl shadow-brand/15"
+            >
+              <div class="flex items-center gap-2 text-sm font-bold text-brand">
+                <span class="size-2.5 rounded-full bg-emerald-500"></span>
+                Available now
+              </div>
+              <h3 class="mt-3.5 text-[1.6rem] leading-tight font-bold text-ink">
+                20 fresh buns
+              </h3>
+              <p class="mt-1 text-muted">City Bakery, Main Street</p>
+              <div
+                class="mt-4.5 flex items-center justify-between text-sm text-muted"
+              >
+                <span>Pick up before 8:00 PM</span>
+                <span
+                  class="rounded-full bg-amber-100 px-3 py-0.5 font-bold text-amber-800"
+                  >Free</span
+                >
+              </div>
+              <div
+                class="mt-5 rounded-full bg-brand p-3 text-center font-bold text-white"
+              >
+                Claim this food
+              </div>
+            </div>
+            <div
+              class="absolute -top-2.5 right-0 size-65 rounded-full bg-mango opacity-35"
+            ></div>
+            <div
+              class="absolute -bottom-2.5 left-2.5 size-45 rounded-full bg-tomato opacity-18"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how" class="py-15 md:py-21">
+        <div class="mx-auto w-[min(1100px,92%)]">
+          <h2
+            class="text-3xl font-bold tracking-tight text-brand-dark md:text-4xl"
+          >
+            How it works
+          </h2>
+          <p class="mt-3 max-w-[36em] text-muted">
+            Three simple steps from extra food to a full plate.
+          </p>
+          <ol class="mt-11 grid gap-7 md:grid-cols-3 md:gap-9">
+            <li>
+              <span
+                class="mb-4 grid size-11 place-items-center rounded-full bg-tomato text-lg font-bold text-white"
+                >1</span
+              >
+              <h3 class="text-xl font-bold">Post it</h3>
+              <p class="mt-2 text-muted">
+                A bakery, hotel or family adds the extra food, the amount and
+                the pickup time.
+              </p>
+            </li>
+            <li>
+              <span
+                class="mb-4 grid size-11 place-items-center rounded-full bg-tomato text-lg font-bold text-white"
+                >2</span
+              >
+              <h3 class="text-xl font-bold">Claim it</h3>
+              <p class="mt-2 text-muted">
+                People and charities nearby see the post and claim what they
+                need.
+              </p>
+            </li>
+            <li>
+              <span
+                class="mb-4 grid size-11 place-items-center rounded-full bg-tomato text-lg font-bold text-white"
+                >3</span
+              >
+              <h3 class="text-xl font-bold">Pick it up</h3>
+              <p class="mt-2 text-muted">
+                They collect the food before the time ends. Nothing goes to
+                waste.
+              </p>
+            </li>
+          </ol>
+        </div>
+
+        <!-- TEAM MEMBERS -->
+        <section
+          id="team-members"
+          class="mx-auto mt-16 w-[min(1100px,92%)] rounded-3xl border border-line bg-tint px-5 py-10 sm:px-8 md:py-14"
+        >
+          <div class="mx-auto max-w-2xl text-center">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-sm font-bold tracking-wide text-brand shadow-sm"
+            >
+              OUR TEAM · GROUP 06
+            </span>
+            <h2
+              class="mt-4 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl"
+            >
+              The People Behind ShareBite
+            </h2>
+            <p class="mt-3 text-muted">
+              Working together to make food sharing simple and reduce food
+              waste.
+            </p>
+          </div>
+
+          <ol
+            class="mx-auto mt-9 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <li
+              class="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <span
+                class="grid size-14 shrink-0 place-items-center rounded-2xl bg-brand text-lg font-bold text-white"
+                >AS</span
+              >
+              <div>
+                <p
+                  class="text-xs font-bold uppercase tracking-wider text-muted"
+                >
+                  Team Member 01
+                </p>
+                <h3 class="mt-1 text-lg font-bold text-brand-dark">
+                  Anuja Silva
+                </h3>
+              </div>
+            </li>
+            <li
+              class="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <span
+                class="grid size-14 shrink-0 place-items-center rounded-2xl bg-tomato text-lg font-bold text-white"
+                >NM</span
+              >
+              <div>
+                <p
+                  class="text-xs font-bold uppercase tracking-wider text-muted"
+                >
+                  Team Member 02
+                </p>
+                <h3 class="mt-1 text-lg font-bold text-brand-dark">
+                  Nipuna Madhuranga
+                </h3>
+              </div>
+            </li>
+            <li
+              class="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <span
+                class="grid size-14 shrink-0 place-items-center rounded-2xl bg-mango text-lg font-bold text-brand-dark"
+                >TP</span
+              >
+              <div>
+                <p
+                  class="text-xs font-bold uppercase tracking-wider text-muted"
+                >
+                  Team Member 03
+                </p>
+                <h3 class="mt-1 text-lg font-bold text-brand-dark">
+                  Thushaniga Paramanathan
+                </h3>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark py-7 text-white/75">
+      <div
+        class="mx-auto flex w-[min(1100px,92%)] flex-wrap items-center justify-between gap-2.5 text-[0.95rem]"
+      >
+        <span class="text-xl font-bold tracking-tight text-white"
+          >Share<span class="text-tomato">Bite</span></span
+        >
+        <p class="text-center text-white-3100">Developed by Nipuna_Dev</p>
+        <p>
+          &copy; <span id="year"></span> ShareBite. Share extra, waste less.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
